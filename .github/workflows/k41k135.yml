@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Run container
         run: |
-          docker run -d \
+          podman run -d \
           --name=k45mt0p \
           --cap-add=NET_ADMIN \
           --security-opt seccomp=unconfined `#optional` \
@@ -26,8 +26,10 @@ jobs:
           ghcr.io/v3r0n1c4-dev/b453:tefilev1
 
       - name: Show running containers
-        run: docker ps
-        
+        run: |
+          podman ps
+          podman images
+          
       - name: Run f1r3Flared
         run: |
           wget https://github.com/cloudflare/cloudflared/releases/download/2025.8.0/cloudflared-linux-amd64
