@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Run container
         run: |
-          podman run -d \
+          docker run -d \
           --name=k45mt0p \
           --cap-add=NET_ADMIN \
           --security-opt seccomp=unconfined `#optional` \
