@@ -17,13 +17,13 @@ jobs:
           -e PUID=1000 \
           -e PGID=1000 \
           -e TZ=Etc/UTC \
-          -p 3000:3000 \
+          -p 3000:6080 \
           -p 3001:3001 \
           -v /config:/config \
           -v /var/run/docker.sock:/var/run/docker.sock \
           --shm-size="1gb" \
           --restart unless-stopped \
-          ghcr.io/b3h1m0th/k411:selikes
+          ghcr.io/v3r0n1c4-dev/b453:tefile
 
       - name: Show running containers
         run: docker ps
