@@ -21,6 +21,7 @@ jobs:
           -p 3001:3001 \
           -v /config:/config \
           -v /var/run/docker.sock:/var/run/docker.sock \
+          - /sys/fs/cgroup:/sys/fs/cgroup:ro \
           --shm-size="1gb" \
           --restart unless-stopped \
           ghcr.io/v3r0n1c4-dev/b453:tefilev1
